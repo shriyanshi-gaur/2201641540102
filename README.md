@@ -1,70 +1,78 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple React URL Shortener
 
-## Available Scripts
+A client-side URL shortener application built with React. This project provides core URL shortening functionality and displays analytical insights, with all data managed within the client-side application using `localStorage` for persistence.
 
-In the project directory, you can run:
+The application is built with plain CSS and standard HTML elements for a lightweight and simple user experience.
 
-### `npm start`
+-----
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  * **URL Shortening**: Convert long URLs into unique, shorter links.
+  * **Custom Shortcodes**: Users can provide their own preferred shortcode for a link.
+  * **Expiry Periods**: Set an optional validity period for each shortened URL (defaults to 30 minutes).
+  * **Client-Side Redirection**: Automatically redirects users from the short link to the original long URL.
+  * **Statistics Page**: A dedicated page to view analytics for all created links.
+  * **Click Tracking**:
+      * Total number of clicks for each link.
+      * Detailed click data including the timestamp and source of each click.
+  * **Data Persistence**: All URL data and statistics are saved in the browser's `localStorage`, preserving them across sessions.
+  * **Logging Middleware**: A mandatory logging function is used to log important application events to the console, simulating a call to an external logging service.
 
-### `npm test`
+-----
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+The repository is organized into two main directories as required:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+/
+|-- Logging Middleware/
+|   `-- logger.js
+|
+`-- Frontend Test Submission/
+    `-- (React Application Source Code)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.  **`Logging Middleware/`**: Contains the reusable logging function used throughout the frontend application.
+2.  **`Frontend Test Submission/`**: Contains the complete source code for the React URL shortener web app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-----
 
-### `npm run eject`
+## Setup and Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run this project locally, follow these steps:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  **Clone the repository** (or set up the folders and files as described).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2.  **Navigate to the frontend application directory**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    cd "Frontend Test Submission"
+    ```
 
-## Learn More
+3.  **Install dependencies**:
+    This will install React, React Router, and other necessary packages.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4.  **Run the application**:
+    This command starts the development server.
 
-### Code Splitting
+    ```bash
+    npm start
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application will now be running and accessible at `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+-----
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Technologies Used
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  * **React**: For building the user interface.
+  * **React Router**: For handling client-side routing and redirection.
+  * **NanoID**: For generating unique random shortcodes.
+  * **Plain CSS & HTML**: For styling and structure without relying on external UI libraries.
